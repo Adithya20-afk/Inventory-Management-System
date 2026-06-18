@@ -1,16 +1,16 @@
-/* 
-import controller.ExpenseController;
+
+import controller.ProductController;
 
 public class Main {
     public static void main(String[] args){
-        ExpenseController controller = new ExpenseController();
+        ProductController controller = new ProductController();
         controller.start();
     }
 }
-*/
 
 
 
+/* 
 import db.DBConnection;
 import java.sql.Connection;
 
@@ -25,6 +25,7 @@ public class Main{
         }
     }
 }
+*/
 
 /*
 import service.ExpenseService;
