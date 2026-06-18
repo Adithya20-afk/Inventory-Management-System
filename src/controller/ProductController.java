@@ -49,7 +49,7 @@ public class ProductController {
                         else System.out.println("add failed");
                     }
                     catch(NumberFormatException nfe){
-                        System.out.println("Invalid amount");
+                        System.out.println("Invalid amount or price");
                         break;
                     }
                     break;
@@ -77,7 +77,11 @@ public class ProductController {
                         System.out.println(e.getMessage());
                         break;
                     }
-                    System.out.println(service.getProductById(id0));
+                    Product p = service.getProductById(id0);
+                    if(p == null)
+                        System.out.println("Product not found");
+                    else
+                        System.out.println(p);
                     break;
 
                 case UPDATE_QUANTITY:
@@ -156,8 +160,11 @@ public class ProductController {
                         break;
                     }
                     ArrayList<Product> products1 = service.getLowStockProducts(quantity1);
-                    for(Product p: products1)
-                        System.out.println(p);
+                    if(products1.isEmpty())
+                        System.out.println("No low stock products");
+                    else
+                        for(Product p1 : products1)
+                            System.out.println(p1);
                     break;
                     
                 case TOTAL_VALUE:
